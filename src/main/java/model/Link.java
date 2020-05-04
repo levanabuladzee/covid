@@ -1,8 +1,13 @@
 package model;
 
+import javax.validation.constraints.NotNull;
+
 public class Link {
+    @NotNull
     private String link;
+    @NotNull
     private String rel;
+    @NotNull
     private String type;
 
     public Link() {

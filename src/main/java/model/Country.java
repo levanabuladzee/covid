@@ -5,20 +5,17 @@ import javax.json.bind.annotation.JsonbPropertyOrder;
 import javax.json.bind.annotation.JsonbTransient;
 import javax.json.bind.config.PropertyOrderStrategy;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 import java.util.ArrayList;
 import java.util.List;
 
 @JsonbPropertyOrder(PropertyOrderStrategy.ANY)
 public class Country {
-    @JsonbProperty("id")
     private int countryId;
     @JsonbProperty("country")
     @NotNull
     private String countryName;
     @JsonbProperty("code")
     @NotNull
-    @Pattern(regexp = "^[a-Z]$")
     private String countryCode;
     private final List<Link> links = new ArrayList<>();
 
@@ -31,6 +28,8 @@ public class Country {
         this.countryCode = countryCode;
     }
 
+    @JsonbProperty("id")
+    @NotNull
     public int getCountryId() {
         return countryId;
     }
