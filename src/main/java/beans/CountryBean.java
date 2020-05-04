@@ -2,6 +2,7 @@ package beans;
 
 import dao.CountryDao;
 import dao.StatisticDao;
+import error.CountryNotFoundException;
 import model.Country;
 import model.Statistic;
 
@@ -36,6 +37,9 @@ public class CountryBean {
 
     public Country getCountry(@NotNull @Positive Integer id, UriInfo uriInfo) {
         Country country = countryDao.getCountry(id);
+        if (country == null) {
+            throw new CountryNotFoundException(id);
+        }
         country.addLink(uriBean.getUriForSelf(uriInfo, country), "self", "GET");
         country.addLink(uriBean.getUriForStatistics(uriInfo, country), "statistics", "GET");
         return country;
