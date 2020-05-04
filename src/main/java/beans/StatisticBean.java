@@ -2,8 +2,6 @@ package beans;
 
 import dao.StatisticDao;
 import model.Statistic;
-import resources.CountriesResource;
-import resources.StatisticsResource;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
