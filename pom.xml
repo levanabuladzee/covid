@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>groupId</groupId>
-    <artifactId>restful-training</artifactId>
+    <artifactId>covid</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
@@ -19,7 +19,7 @@
     </dependencies>
 
     <build>
-        <finalName>restful</finalName>
+        <finalName>covid</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>

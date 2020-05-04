@@ -1,14 +1,14 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="restful-training:war">
+  <artifact type="war" name="covid:war">
     <output-path>$PROJECT_DIR$/target</output-path>
     <properties id="maven-jee-properties">
       <options>
-        <module>restful-training</module>
+        <module>covid</module>
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="restful.war">
-      <element id="artifact" artifact-name="restful-training:war exploded" />
+    <root id="archive" name="covid.war">
+      <element id="artifact" artifact-name="covid:war exploded" />
     </root>
   </artifact>
 </component>
