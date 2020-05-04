@@ -128,7 +128,7 @@ public class StatisticDao {
 
                 try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
                     if (generatedKeys.next()) {
-                        statistic.setCountryId(generatedKeys.getInt(1));
+                        statistic.setStatisticId(generatedKeys.getInt(1));
                     } else {
                         throw new SQLException("Updating statistic failed, no ID obtained.");
                     }

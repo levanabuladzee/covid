@@ -27,10 +27,8 @@ public class StatisticBean {
     }
 
     public Response updateStatistic(@NotNull @Positive Integer id, @NotNull @Valid Statistic statistic, UriInfo uriInfo) {
-        int country = statistic.getCountryId();
         statistic.setStatisticId(id);
         Statistic updatedStatistic = statisticDao.updateStatistic(statistic);
-        updatedStatistic.setCountryId(country);
         String newId = String.valueOf(updatedStatistic.getCountryId());
         URI uri = uriBean.getStatisticsUri(uriInfo, newId);
         return Response.ok().location(uri).entity(updatedStatistic).build();
