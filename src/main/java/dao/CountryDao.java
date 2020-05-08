@@ -1,5 +1,6 @@
 package dao;
 
+import error.ApiSQLException;
 import model.Country;
 import util.DBConnection;
 
@@ -29,7 +30,7 @@ public class CountryDao {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new ApiSQLException(e.getSQLState(), e.getMessage());
         }
         return countries;
     }
@@ -56,7 +57,7 @@ public class CountryDao {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new ApiSQLException(e.getSQLState(), e.getMessage());
         }
         return country;
     }
@@ -85,7 +86,7 @@ public class CountryDao {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new ApiSQLException(e.getSQLState(), e.getMessage());
         }
         return country;
     }
@@ -116,7 +117,7 @@ public class CountryDao {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new ApiSQLException(e.getSQLState(), e.getMessage());
         }
         return country;
     }
@@ -132,7 +133,7 @@ public class CountryDao {
                 preparedStatement.executeUpdate();
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new ApiSQLException(e.getSQLState(), e.getMessage());
         }
     }
 }

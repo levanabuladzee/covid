@@ -1,5 +1,6 @@
 package dao;
 
+import error.ApiSQLException;
 import model.Statistic;
 import util.DBConnection;
 
@@ -70,6 +71,7 @@ public class StatisticDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            throw new ApiSQLException(e.getSQLState(), e.getMessage());
         }
         return statistics;
     }
@@ -102,6 +104,7 @@ public class StatisticDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            throw new ApiSQLException(e.getSQLState(), e.getMessage());
         }
         return statistic;
     }
@@ -136,6 +139,7 @@ public class StatisticDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            throw new ApiSQLException(e.getSQLState(), e.getMessage());
         }
         return statistic;
     }
@@ -152,6 +156,7 @@ public class StatisticDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            throw new ApiSQLException(e.getSQLState(), e.getMessage());
         }
     }
 }
